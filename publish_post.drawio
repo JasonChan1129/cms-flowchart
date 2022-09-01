@@ -1,0 +1,121 @@
+<mxfile host="65bd71144e">
+    <diagram id="od4vKRxtiJ8oWAWhGF9b" name="Page-1">
+        <mxGraphModel dx="982" dy="780" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="9" value="loop through team notes&lt;br&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="354" y="90" width="140" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="10" value="if last update within a day from now" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="319" y="150" width="210" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="11" value="fetch another api to get note details&amp;nbsp;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="229" y="220" width="209" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="12" value="pass" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="470" y="220" width="90" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="13" value="process and prepare data to be inserted into db&amp;nbsp;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="198.5" y="285" width="270" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="14" value="upsert post" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="298.5" y="350" width="70" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="16" value="upsert topics" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="294" y="420" width="76" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="17" value="upsert tags" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="290.5" y="500" width="83" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="18" value="update post_topics, post_tags and author_posts table" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="230.5" y="585" width="203" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="19" value="&lt;br&gt;old topics:&amp;nbsp; [topic1, topic2, topic3]&lt;br&gt;new topics: [topic1,topic4,topic5]&lt;br&gt;&lt;br&gt;new.contains(old[i]) !== true&lt;br&gt;append to deleteSlice, then batch Delete&lt;br&gt;old.contains(new[i]) !== true&lt;br&gt;append to createSlice, then batch Create" style="whiteSpace=wrap;html=1;aspect=fixed;dashed=1;rounded=0;glass=0;" vertex="1" parent="1">
+                    <mxGeometry y="550" width="210" height="210" as="geometry"/>
+                </mxCell>
+                <mxCell id="20" value="先不考慮publish date，在撈資料時再做處理。" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;glass=0;dashed=1;" vertex="1" parent="1">
+                    <mxGeometry x="40" y="260" width="130" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="21" value="fetch api to get list of team notes" style="rounded=1;whiteSpace=wrap;html=1;glass=0;" vertex="1" parent="1">
+                    <mxGeometry x="364" y="20" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="27" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="21">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="390" y="390" as="sourcePoint"/>
+                        <mxPoint x="424" y="90" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="28" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="9" target="10">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="390" y="290" as="sourcePoint"/>
+                        <mxPoint x="424" y="120" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="30" value="" style="endArrow=classic;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="10" target="11">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="390" y="290" as="sourcePoint"/>
+                        <mxPoint x="440" y="240" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="31" value="" style="endArrow=classic;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="10" target="12">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="390" y="290" as="sourcePoint"/>
+                        <mxPoint x="550" y="220" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="32" value="YES" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;glass=0;" vertex="1" parent="1">
+                    <mxGeometry x="350" y="190" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="33" value="NO" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;glass=0;" vertex="1" parent="1">
+                    <mxGeometry x="500" y="190" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="34" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="11" target="13">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="390" y="290" as="sourcePoint"/>
+                        <mxPoint x="440" y="240" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="35" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="13" target="14">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="390" y="290" as="sourcePoint"/>
+                        <mxPoint x="440" y="240" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="37" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="14" target="16">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="390" y="290" as="sourcePoint"/>
+                        <mxPoint x="440" y="240" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="38" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="16" target="17">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="390" y="290" as="sourcePoint"/>
+                        <mxPoint x="440" y="240" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="39" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="17" target="18">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="390" y="290" as="sourcePoint"/>
+                        <mxPoint x="440" y="240" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="40" value="Upsert(post *schema.Post)&amp;nbsp; error" style="rounded=0;whiteSpace=wrap;html=1;glass=0;dashed=1;" vertex="1" parent="1">
+                    <mxGeometry x="422" y="355" width="216" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="41" value="Upsert(topic *schema.Topic)&amp;nbsp; (string, error)" style="rounded=0;whiteSpace=wrap;html=1;glass=0;dashed=1;" vertex="1" parent="1">
+                    <mxGeometry x="401" y="425" width="258" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="42" value="Upsert(tag *schema.Tag)&amp;nbsp; (string, error)" style="rounded=0;whiteSpace=wrap;html=1;glass=0;dashed=1;" vertex="1" parent="1">
+                    <mxGeometry x="401" y="505" width="258" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="43" value="Delete(topicID string, postID string) error" style="rounded=1;whiteSpace=wrap;html=1;glass=0;dashed=1;" vertex="1" parent="1">
+                    <mxGeometry x="494" y="585" width="226" height="35" as="geometry"/>
+                </mxCell>
+                <mxCell id="44" value="Create(topicID string, postID string) error" style="rounded=1;whiteSpace=wrap;html=1;glass=0;dashed=1;" vertex="1" parent="1">
+                    <mxGeometry x="494" y="640" width="226" height="35" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
